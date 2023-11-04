@@ -36,9 +36,7 @@ public class ProductServiceImpl implements ProductService{
     public List<ProductResponse> getAllProducts() {
         List<Product> products = productRepositories.findAll();
         List<ProductResponse> productResponses = new ArrayList<>();
-        products.forEach(product -> {
-            productResponses.add(new ProductResponse(product));
-        });
+        products.forEach(product -> productResponses.add(new ProductResponse(product)));
         return productResponses;
     }
 
